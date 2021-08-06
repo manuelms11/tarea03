@@ -21,6 +21,7 @@ export const fetchUsers =
       const userReponse = await axios.get(
         'https://jsonplaceholder.typicode.com/users',
       );
+      //console.log(userReponse)
       dispatch(actualizarUsers(userReponse.data));
     } catch (error) {
       console.error(error);

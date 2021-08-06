@@ -4,6 +4,6 @@ export default interface IAlbums{
     userId: number;
     id:     number;
     title:  string;
-    thumbnaiUrl?: string;
+    thumbnailUrl?: string;
     url?:  string;
 }

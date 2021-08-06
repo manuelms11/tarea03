@@ -14,7 +14,7 @@ const UserList: React.FC = () => {
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
-
+  console.log(users)
   return (
     <View>
       {users.length > 0 ? (

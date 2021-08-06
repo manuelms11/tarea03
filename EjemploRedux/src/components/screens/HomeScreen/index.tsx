@@ -8,12 +8,14 @@ import UserDetails from '../../molecules/UserDetails';
 import UserList from '../../organisms/UserList';
 
 const HomeScreen: React.FC = () => {
-  //const selectedAlbum = useSelector((state: IState) => state.Albums.selectedAlbum);
-  const selectedUser = useSelector((state: IState) => state.Users.selectedUser);
+  const selectedAlbum = useSelector((state: IState) => state.Albums.selectedAlbum);
+  //const selectedUser = useSelector((state: IState) => state.Users.selectedUser);
 
-  return <View>{selectedUser ? <UserDetails /> : <UserList />}</View>;
-  //return <View>{selectedAlbum ? <AlbumDetails /> : <AlbumList />}</View>;
+  
+  return <View>{selectedAlbum ? <AlbumDetails /> : <AlbumList />}</View>;
+  //return <View><AlbumList /></View>;
+  //return <View>{selectedUser ? <UserDetails /> : <UserList />}</View>;
 
-};
+}; 
 
 export default HomeScreen;

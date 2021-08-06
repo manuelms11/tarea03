@@ -1,6 +1,6 @@
 import {IAction} from '../../../models/IAction';
 import IAlbum from '../../../models/IAlbums';
-import {ACTUALIZAR_SELECTED_USER, ACTUALIZAR_USERS} from '../../actions';
+import {ACTUALIZAR_ALBUMS, ACTUALIZAR_SELECTED_ALBUM} from '../../actions';
 
 export interface IAlbumsState {
   albums: IAlbum[];
@@ -14,10 +14,10 @@ const initialState: IAlbumsState = {
 
 export default (state = initialState, {type, payload}: IAction) => {
   switch (type) {
-    case ACTUALIZAR_USERS:
+    case ACTUALIZAR_ALBUMS:
       return {...state, albums: payload as IAlbum[]};
 
-    case ACTUALIZAR_SELECTED_USER:
+    case ACTUALIZAR_SELECTED_ALBUM:
       return {...state, selectedAlbum: payload as number | null};
 
     default:

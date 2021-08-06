@@ -1,6 +1,6 @@
 import styled from '@emotion/native';
 import React, {FC} from 'react';
-import {Text} from 'react-native';
+import {Image, StyleSheet, Text} from 'react-native';
 import {useDispatch} from 'react-redux';
 import IAlbum from '../../../models/IAlbums';
 import {actualizarSelectedAlbum} from '../../../store/actions/Albums';
@@ -20,6 +20,7 @@ const AlbumListItem: FC<AlbumListItemProps> = ({album, index}) => {
     <ItemContainer onPress={onPress}>
       <Text>
         {++index}. {album.title}
+        <Image style={styles.image} source={{ uri: album.url}}></Image>     
       </Text>
     </ItemContainer>
   );
@@ -31,5 +32,12 @@ const ItemContainer = styled.TouchableOpacity`
   padding: 8px 12px;
   margin: 4px 0;
 `;
+
+const styles = StyleSheet.create({
+  image: {
+    width: 50,
+    height: 50,
+  },
+});
 
 export default AlbumListItem;

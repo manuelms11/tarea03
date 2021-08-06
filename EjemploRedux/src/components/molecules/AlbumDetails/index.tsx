@@ -11,7 +11,7 @@ const AlbumDetails: React.FC = () => {
 
   const selectedAlbum = useSelector((state: IState) => state.Albums.selectedAlbum);
   const albums = useSelector((state: IState) => state.Albums.albums);
-  const {title, id} = albums[selectedAlbum || 0];
+  const {title, userId, url, id} = albums[selectedAlbum || 0];
 
   const onBackPress = () => {
     dispatch(actualizarSelectedAlbum(null));
@@ -23,13 +23,8 @@ const AlbumDetails: React.FC = () => {
 
   return (
     <Container>
-      <CustomText>{title}</CustomText>     
-
-      {/* <Image
-        style={styles.image}
-        source={{uri: 'https://via.placeholder.com/600/92c952'}}
-      /> */}
-
+      <CustomText>{id}. {title} </CustomText>     
+      <Image style={styles.image} source={{ uri: url}}></Image>  
       <Button title="Back" onPress={onBackPress} />
     </Container>
   );
@@ -50,8 +45,8 @@ const TodoList = styled.FlatList`
 
 const styles = StyleSheet.create({
   image: {
-    width: 50,
-    height: 50,
+    width: 350,
+    height: 250,
   },
 });
 
