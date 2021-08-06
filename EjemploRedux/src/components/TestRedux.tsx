@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {IState} from '../models/IState';
 import {actualizarPrueba} from '../store/actions/Prueba';
 
-const TestRedux: React.FC = () => {
+/*const TestRedux: React.FC = () => {
   const prueba = useSelector((state: IState) => state.Prueba.prueba);
   const dispatch = useDispatch();
 
@@ -19,6 +19,6 @@ const TestRedux: React.FC = () => {
       <Text>{prueba}</Text>
     </View>
   );
-};
+};*/
 
-export default TestRedux;
+//export default TestRedux;
