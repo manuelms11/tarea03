@@ -6,7 +6,7 @@ import {IState} from '../../../models/IState';
 import ITodo from '../../../models/ITodo';
 
 export const actualizarTodos = (payload: ITodo[]): IAction => {
-  console.log(payload);
+  //console.log(payload);
   return {
     type: ACTUALIZAR_TODOS,
     payload,

@@ -31,7 +31,7 @@ export const fetchAlbums =
 
       const albums = (albumResponse.data as IAlbums[]).map((album) =>({
         ...album,
-        thumbnaiUrl: (photoResponse.data as IPhoto[]).find( (photo) => photo.albumId === album.id,)?.thumbnailUrl,
+        thumbnailUrl: (photoResponse.data as IPhoto[]).find( (photo) => photo.albumId === album.id,)?.thumbnailUrl,
         url: (photoResponse.data as IPhoto[]).find((photo) => photo.albumId === album.id,)?.url,          
       }));
 
@@ -39,7 +39,7 @@ export const fetchAlbums =
         console.log(album)
       })*/
 
-      console.log('TEST')
+      //console.log('TEST')
       //console.log(albums)
       dispatch(actualizarAlbums(albums));
     } catch (error) {

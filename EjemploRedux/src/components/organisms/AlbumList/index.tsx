@@ -3,16 +3,19 @@ import {View, Text, ActivityIndicator, FlatList} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {IState} from '../../../models/IState';
 import {fetchAlbums} from '../../../store/actions/Albums';
-
+import { useAlbums } from '../../contexts/albums-context';
 import AlbumListItem from '../../molecules/AlbumListItem';
 
 const AlbumList: React.FC = () => {
-  const albums = useSelector((state: IState) => state.Albums.albums);
-  console.log(albums)
-  const dispatch = useDispatch();
+ // const albums = useSelector((state: IState) => state.Albums.albums);
+  //console.log(albums)
+  //const dispatch = useDispatch();
+
+const{albums,setAlbums, fetchAlbums} = useAlbums();
 
   useEffect(() => {
-    dispatch(fetchAlbums());
+    //dispatch(fetchAlbums());
+    fetchAlbums();
   }, []);
    
   console.log(albums)

@@ -5,9 +5,12 @@ import {useDispatch, useSelector} from 'react-redux';
 import {IState} from '../../../models/IState';
 import {fetchTodos} from '../../../store/actions/Todos';
 import {actualizarSelectedAlbum} from '../../../store/actions/Albums';
+import { useHistory } from 'react-router-native';
 
 const AlbumDetails: React.FC = () => {
   const dispatch = useDispatch();
+
+  const history = useHistory();
 
   const selectedAlbum = useSelector((state: IState) => state.Albums.selectedAlbum);
   const albums = useSelector((state: IState) => state.Albums.albums);
@@ -15,6 +18,7 @@ const AlbumDetails: React.FC = () => {
 
   const onBackPress = () => {
     dispatch(actualizarSelectedAlbum(null));
+    history.goBack();
   };
 
   useEffect(() => {

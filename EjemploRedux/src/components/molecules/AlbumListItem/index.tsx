@@ -4,6 +4,7 @@ import {Image, StyleSheet, Text} from 'react-native';
 import {useDispatch} from 'react-redux';
 import IAlbum from '../../../models/IAlbums';
 import {actualizarSelectedAlbum} from '../../../store/actions/Albums';
+import { useAlbums } from '../../contexts/albums-context';
 
 export interface AlbumListItemProps {
   album: IAlbum;
@@ -11,9 +12,12 @@ export interface AlbumListItemProps {
 }
 
 const AlbumListItem: FC<AlbumListItemProps> = ({album, index}) => {
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
+  const {setSelectedAlbum} = useAlbums();
+  
   const onPress = () => {
-    dispatch(actualizarSelectedAlbum(index));
+    //dispatch(actualizarSelectedAlbum(index));
+    setSelectedAlbum(index)
   };
 
   return (
